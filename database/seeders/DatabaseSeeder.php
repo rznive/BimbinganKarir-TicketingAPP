@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+
 class DatabaseSeeder extends Seeder
 {
     use WithoutModelEvents;
@@ -20,9 +21,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CategorySeeder::class,
             UserSeeder::class,
+            // TiketTypeSeeder::class,
             EventSeeder::class,
-            TicketSeeder::class,
-            OrderSeeder::class,
+            // TicketSeeder::class,
+            // OrderSeeder::class,
         ]);
     }
 }

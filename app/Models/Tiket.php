@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\TiketType;
 
 class Tiket extends Model
 {
@@ -11,7 +12,7 @@ class Tiket extends Model
 
     protected $fillable = [
         'event_id',
-        'tipe',
+        'ticket_type_id',
         'harga',
         'stok',
     ];
@@ -30,5 +31,10 @@ class Tiket extends Model
     {
         return $this->belongsToMany(Order::class, 'detail_orders')
             ->withPivot('jumlah', 'subtotal_harga');
+    }
+
+    public function ticketType()
+    {
+        return $this->belongsTo(TiketType::class, 'ticket_type_id');
     }
 }
