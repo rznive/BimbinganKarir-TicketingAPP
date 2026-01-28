@@ -46,9 +46,10 @@
             <li class="{{ request()->routeIs('admin.payments.*') ? 'bg-gray-200 rounded-lg' : '' }}">
                 <a href="{{ route('admin.payments.index') }}"
                     class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Payment">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                        <path fill="currentColor"
-                            d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2H2zm0 4h20v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M2 5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3H2V5zm0 5h20v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9z" />
                     </svg>
                     <span class="is-drawer-close:hidden">Manajemen Pembayaran</span>
                 </a>
@@ -58,10 +59,24 @@
             <li class="{{ request()->routeIs('admin.ticket_types.*') ? 'bg-gray-200 rounded-lg' : '' }}">
                 <a href="{{ route('admin.ticket_types.index') }}"
                     class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Ticket">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M4 5h16v4a2 2 0 0 0 0 4v4H4v-4a2 2 0 0 0 0-4z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path d="M4 6h16v4a2 2 0 1 0 0 4v4H4v-4a2 2 0 1 0 0-4V6z" />
                     </svg>
                     <span class="is-drawer-close:hidden">Manajemen Tiket</span>
+                </a>
+            </li>
+
+            <!-- Lokasi Item -->
+            <li class="{{ request()->routeIs('admin.location.*') ? 'bg-gray-200 rounded-lg' : '' }}">
+                <a href="{{ route('admin.location.index') }}"
+                    class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Ticket">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z" />
+                    </svg>
+                    <span class="is-drawer-close:hidden">Manajemen Lokasi</span>
                 </a>
             </li>
 
@@ -69,8 +84,9 @@
             <li class="{{ request()->routeIs('admin.histories.*') ? 'bg-gray-200 rounded-lg' : '' }}">
                 <a href="{{ route('admin.histories.index') }}"
                     class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="History">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M12 2a10 10 0 1 0 10 10h-2a8 8 0 1 1-8-8v3l4-4l-4-4z" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path d="M12 4a8 8 0 1 1-7.75 6H2l3.5-3.5L9 10H6.25A6 6 0 1 0 12 6v4l3 3-1.5 1.5L11 11V4z" />
                     </svg>
                     <span class="is-drawer-close:hidden">History Pembelian</span>
                 </a>

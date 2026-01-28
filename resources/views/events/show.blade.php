@@ -27,7 +27,7 @@
                                 <p class="text-sm text-gray-500 mt-1">
                                     {{ \Carbon\Carbon::parse($event->tanggal_waktu)->locale('id')->translatedFormat('d F Y, H:i') }}
                                     • 📍
-                                    {{ $event->lokasi }}
+                                    {{ $event->lokasi->nama_lokasi }}
                                 </p>
 
                                 <div class="mt-3 flex gap-2 items-center">
@@ -49,7 +49,7 @@
                             @forelse($event->tikets as $tiket)
                                 <div class="card card-side shadow-sm p-4 items-center">
                                     <div class="flex-1">
-                                        <h4 class="font-bold">{{ $tiket->tipe }}</h4>
+                                        <h4 class="font-bold">{{ $tiket->ticketType->name }}</h4>
                                         <p class="text-sm text-gray-500">Stok: <span
                                                 id="stock-{{ $tiket->id }}">{{ $tiket->stok }}</span></p>
                                         <p class="text-sm mt-2">{{ $tiket->keterangan ?? '' }}</p>
@@ -80,6 +80,25 @@
                                 <div class="alert alert-info">Tiket belum tersedia untuk acara ini.</div>
                             @endforelse
                         </div>
+                        <h3 class="text-xl font-bold mt-8">Pilih Metode Pembayaran</h3>
+
+                        <div class="mt-4 space-y-3">
+                            @forelse ($paymentTypes as $paymentType)
+                                <label
+                                    class="flex items-center gap-3 p-4 border rounded-lg cursor-pointer hover:bg-base-200">
+
+                                    <input type="radio" name="payment_type" value="{{ $paymentType->id }}"
+                                        class="radio radio-primary" required />
+
+                                    <span class="font-semibold">{{ $paymentType->name }}</span>
+                                </label>
+                            @empty
+                                <div class="alert alert-info">
+                                    Metode pembayaran belum tersedia.
+                                </div>
+                            @endforelse
+                        </div>
+
 
                     </div>
                 </div>

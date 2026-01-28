@@ -39,7 +39,7 @@
 
                     <div class="form-control">
                         <label class="label"><span class="label-text font-semibold">Lokasi</span></label>
-                        <input type="text" class="input input-bordered w-full" value="{{ $event->lokasi }}"
+                        <input type="text" class="input input-bordered w-full" value="{{ $event->lokasi->nama_lokasi }}"
                             disabled />
                     </div>
                 </form>

@@ -20,6 +20,24 @@
                     <p class="font-bold text-4xl">{{ $totalOrders ?? 0 }}</p>
                 </div>
             </div>
+             <div class="card bg-base-100 card-sm shadow-xs p-2">
+                <div class="card-body">
+                    <h2 class="card-title text-md">Total Lokasi</h2>
+                    <p class="font-bold text-4xl">{{ $totalLokasi ?? 0 }}</p>
+                </div>
+            </div>
+             <div class="card bg-base-100 card-sm shadow-xs p-2">
+                <div class="card-body">
+                    <h2 class="card-title text-md">Total Tipe Tiket</h2>
+                    <p class="font-bold text-4xl">{{ $totalTipeTiket ?? 0 }}</p>
+                </div>
+            </div>
+             <div class="card bg-base-100 card-sm shadow-xs p-2">
+                <div class="card-body">
+                    <h2 class="card-title text-md">Total Metode Pembayaran</h2>
+                    <p class="font-bold text-4xl">{{ $totalmetodePembayaran ?? 0 }}</p>
+                </div>
+            </div>
         </div>
     </div>
 

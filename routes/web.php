@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\EventController as AdminEventController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\TiketController;
 use App\Http\Controllers\Admin\HistoriesController;
+use App\Http\Controllers\Admin\LokasiController;
 use App\Http\Controllers\Admin\PaymentController;
 use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\User\EventController as UserEventController;
@@ -37,6 +38,8 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('tickets', TiketController::class);
     // TiketType Management 
     Route::resource('ticket_types', TiketTypeController::class);
+    // Lokasi Management 
+    Route::resource('location', LokasiController::class);
     // Payment Management
     Route::resource('payments', PaymentController::class);
     // Histories
