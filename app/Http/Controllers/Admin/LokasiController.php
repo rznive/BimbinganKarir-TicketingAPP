@@ -13,7 +13,7 @@ class LokasiController extends Controller
      */
     public function index()
     {
-        $locations = Lokasi::all();
+        $locations = Lokasi::where('aktif', 'Y')->get();
         return view('admin.location.index', compact('locations'));
     }
 
@@ -70,6 +70,7 @@ class LokasiController extends Controller
     {
         $payload = $request->validate([
             'nama_lokasi' => 'required|string|max:255',
+            'aktif' => 'string|max:255'
         ]);
 
         if (!isset($payload['nama_lokasi'])) {
@@ -78,6 +79,7 @@ class LokasiController extends Controller
 
         $location = Lokasi::findOrFail($id);
         $location->nama_lokasi = $payload['nama_lokasi'];
+        $location->aktif = $payload['aktif'];
         $location->save();
 
         return redirect()->route('admin.location.index')->with('success', 'Lokasi berhasil diperbarui.');
@@ -87,7 +89,10 @@ class LokasiController extends Controller
      */
     public function destroy(string $id)
     {
-        Lokasi::destroy($id);
+        // Lokasi::destroy($id);
+        $location = Lokasi::findOrFail($id);
+        $location->aktif = 'N';
+        $location->save();
         return redirect()->route('admin.location.index')->with('success', 'Lokasi berhasil dihapus.');
     }
 }

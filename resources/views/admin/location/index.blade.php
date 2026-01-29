@@ -82,9 +82,20 @@
             <div class="form-control w-full mb-4">
                 <label class="label mb-2">
                     <span class="label-text">Nama Lokasi</span>
-                </label>    
+                </label>
                 <input type="text" placeholder="Masukkan nama Lokasi" class="input input-bordered w-full"
                     value="Lokasi Contoh" id="edit_location_name" name="nama_lokasi" />
+            </div>
+            <div class="form-control w-full mb-4">
+                <label class="label mb-2">
+                    <span class="label-text">Status Lokasi</span>
+                </label>
+                {{-- <input type="text" placeholder="Masukkan status" class="input input-bordered w-full" name="aktif"
+                    required /> --}}
+                <select name="aktif" class="input input-bordered w-full" id="aktif">
+                    <option value="Y">AKTIF [Y]</option>
+                    <option value="N">NONAKTIF [N]</option>
+                </select>
             </div>
             <div class="modal-action">
                 <button class="btn btn-primary" type="submit">Simpan</button>

@@ -26,7 +26,7 @@
                         <th class="w-1/3">Judul</th>
                         <th>Kategori</th>
                         <th>Tanggal</th>
-                        <th>Lokasi</th>
+                        <th>Lokasi [STATUS]</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -37,7 +37,7 @@
                         <td>{{ $event->judul }}</td>
                         <td>{{ $event->kategori->nama }}</td>
                         <td>{{ $event->tanggal_waktu->format('d M Y') }}</td>
-                        <td>{{ $event->lokasi->nama_lokasi }}</td>
+                        <td>{{ $event->lokasi->nama_lokasi }} [{{ $event->lokasi->aktif }}]</td>
                         <td>
                             <a href="{{ route('admin.events.show', $event->id) }}" class="btn btn-sm btn-info mr-2">Detail</a>
                             <a href="{{ route('admin.events.edit', $event->id) }}" class="btn btn-sm btn-primary mr-2">Edit</a>

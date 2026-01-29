@@ -17,7 +17,7 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::all();
-        $locations = Lokasi::all();
+        $locations = Lokasi::where('aktif', 'Y')->get();
         return view('admin.event.index', compact('events', 'locations'));
     }
 
@@ -80,7 +80,7 @@ class EventController extends Controller
     {
         $event = Event::findOrFail($id);
         $categories = Kategori::all();
-        $locations = Lokasi::all();
+        $locations = Lokasi::where('aktif', 'Y')->get();
         return view('admin.event.edit', compact('event', 'categories', 'locations'));
     }
 
